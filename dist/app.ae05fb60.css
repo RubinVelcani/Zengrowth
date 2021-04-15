@@ -13,4 +13,23 @@
   z-index: 10;
 }
 
+.card-pending {
+  opacity: 0;
+}
+
+.form-container-pending {
+  opacity: 1;  
+}
+
+.form-container-sucess {
+  transition: all 0.2s ease-in-out;  
+  opacity: 0;
+}
+
+.card-success {
+  z-index: 10;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
 /*# sourceMappingURL=/app.ae05fb60.css.map */

@@ -35,17 +35,17 @@
                 </a>
                 <img class="p-4 mr-5 hidden md:block" src="/search.cc98f15b.svg" alt="search">
                 <div class="menu-container">
-                <button id="drop-down" class="block md:hidden">
-                    <img class="p-4" src="/hamburger.701508a3.svg" alt="hamburger menu">
-                </button>
-                <button id="lift-up" class="hidden">
-                    <img class="p-4" src="/ex.1e8621a8.svg">
-                </button>
+                    <button id="drop-down" class="block md:hidden">
+                        <img class="p-4" src="/hamburger.701508a3.svg" alt="hamburger menu">
+                    </button>
+                    <button id="lift-up" class="hidden">
+                        <img class="p-4" src="/ex.1e8621a8.svg">
+                    </button>
             </div></ul>
         </div>
     </header>
     <aside class="block right-0 mobile-menu w-4/5">
-        <div class="">    
+        <div class="">
             <div class="flex mx-auto items-center justify-center bg-blue-900 ring-1 ring-blue-300 text-white text-right p-6 shadow-md rounded-md">
                 <nav class="w-full">
                     <ul class="flex flex-col">
@@ -101,23 +101,23 @@
             </section>
             <!-- F O R M  S E C T I O N -->
             <section class="md:mx-auto lg:w-1/2 lg:bg-white lg:rounded-md lg:mx-0 lg:px-10">
-                <div class="form-container">
+                <div class="form-container-pending">
                     <h1 class="text-center text-3xl text-gray-600 mx-16 my-5 pt-0.5 pb-2.5 md:mx-0 md:my-8 md:p-0 lg:text-left lg:mx-0 lg:tracking-tight">
                         Let us get to know you better.</h1>
 
                     <form class="flex flex-col mx-4">
                         <div class="flex flex-col lg:flex-row lg:justify-between">
                             <div id="firstAlertHolder">
-                            <input class="mb-5 pl-4 py-1.5 leading-8 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 shadow lg:w-5/12" type="text" name="firstName" id="firstName" placeholder="First Name">
+                                <input class="mb-5 pl-4 py-1.5 leading-8 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 shadow lg:w-5/12" type="text" name="firstName" id="firstName" placeholder="First Name">
                                 <h3 class="hidden" id="alertFirstNameInput">Insert a valid first name.</h3>
                             </div>
                             <div id="lastAlertHolder">
-                            <input class="mb-5 pl-4 py-1.5 leading-8 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 shadow lg:w-5/12" type="text" name="lastName" id="lastName" placeholder="Last Name">
+                                <input class="mb-5 pl-4 py-1.5 leading-8 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 shadow lg:w-5/12" type="text" name="lastName" id="lastName" placeholder="Last Name">
                                 <h3 class="hidden" id="alertLastNameInput">Insert a valid first name.</h3>
                             </div>
                         </div>
                         <input class="mb-5 pl-4 py-1.5 leading-8 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 shadow" type="text" name="email" id="email" placeholder="Email*">
-                            <h3 class="hidden" id="alertEmailInput">Insert a valid email address.</h3>
+                        <h3 class="hidden" id="alertEmailInput">Insert a valid email address.</h3>
                         <div class="flex flex-row mb-5">
                             <select class="text-sm py-1.5 pl-8 mr-0.5 leading-8 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 shadow" id="prefixInput" name="prefix">
                                 <option value="+49"><img src="/germany.b0d7d058.svg">(+49)</option>
@@ -130,7 +130,7 @@
                                 <option value="+31">(+31)</option>
                             </select>
                             <input class="w-full text-sm py-1.5 pl-5 leading-8 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 shadow" type="text" name="number" id="phoneNumberInput" placeholder="Phone Number">
-                                <h3 class="hidden" id="alertPhoneNumberInput">Insert a valid phone number.</h3>
+                            <h3 class="hidden" id="alertPhoneNumberInput">Insert a valid phone number.</h3>
                         </div>
                         <label class="mb-1.5 font-bold text-gray-600 leading-8">Tell us a bit more about your
                             project:</label>
@@ -173,7 +173,8 @@
                         <label class="mb-1.5 font-bold text-sm text-gray-600 leading-8">What's your monthly budget look
                             like?<span class="font-bold text-red-500">*</span></label>
                         <select class="mb-6 py-2.5 pl-2.5 pr-5 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 shadow" id="budgetSelectInput">
-                            <option class="text-gray-600" name="budget" value="" disabled="" selected="" hidden="">Select Your Ammount</option>
+                            <option class="text-gray-600" name="budget" value="" disabled="" selected="" hidden="">Select Your
+                                Ammount</option>
                             <option class="text-gray-600" name="budget" value="range1">Under 2,000</option>
                             <option class="text-gray-600" name="budget" value="range2">2,000-5,000</option>
                             <option class="text-gray-600" name="budget" value="range3">5,000-10,000</option>
@@ -182,14 +183,12 @@
                         <h3 class="hidden" id="alertBudgetSelectInput">Select at least one option.</h3>
                         <p class="mb-7 bg-blue-700 text-white text-center text-sm font-bold py-4 rounded uppercase" id="submitButton">Start your project</p>
                     </form>
-                    <div class="flex flex-col">
-                        <img src="/formSuccess.f5073548.svg" class="mx-auto">
-                        <h5 class="font-semibold my-4">Thank you for your interest.</h5>
-                        <p class="mb-10">We'll get in touch with you very soon!</p>
-                        <p><span class="font-semibold">P.S. </span>In the meantime, learn more about growth marketing
-                            strategies <span class="text-blue-500 underline">from our blog.</span></p>
-
-                    </div>
+                </div>
+                <div class="flex flex-col card-pending">
+                    <img src="/formSuccess.f5073548.svg" class="mx-auto">
+                    <h5 class="font-semibold my-4">Thank you for your interest.</h5>
+                    <p class="mb-10">We'll get in touch with you very soon!</p>
+                    <p><span class="font-semibold">P.S.</span>In the meantime, learn more about growth marketing strategies<span class="text-blue-500 underline">from our blog.</span></p>
                 </div>
             </section>
         </div>

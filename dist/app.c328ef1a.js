@@ -7267,6 +7267,12 @@ function validateBudgetSelect() {
   !budgetSelectInput.value ? (alertBudgetSelectInput.classList.remove('hidden'), alertBudgetSelectInput.classList.add('block')) : (alertBudgetSelectInput.classList.remove('block'), alertBudgetSelectInput.classList.add('hidden'));
 }
 
+function validateCheck() {
+  var displayForm = document.querySelector('.form-container-pending');
+  var displayCard = document.querySelector('.card-pending');
+  validateForm ? (displayForm.classList.add('form-container-sucess'), displayCard.classList.add('card-success')) : (displayForm.classList.add('form-container-pending'), displayCard.classList.add('card-pending'));
+}
+
 function validateForm() {
   submitButton.addEventListener('click', function (e) {
     e.preventDefault();
@@ -7276,6 +7282,7 @@ function validateForm() {
     validatePhoneNumber();
     validateCheckboxes();
     validateBudgetSelect();
+    if (validateFirst && validateLast && validateEmail && validatePhoneNumber && validateCheckboxes && validateBudgetSelect) validateCheck();
   });
 }
 
