@@ -1,0 +1,16 @@
+.mobile-menu {
+  position: fixed;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  transform: translateX(100%);
+  z-index: -1;
+}
+
+.mobile-style {
+  position: fixed;
+  opacity: 1;
+  transform: translateX(0%);
+  z-index: 10;
+}
+
+/*# sourceMappingURL=/app.ae05fb60.css.map */
