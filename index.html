@@ -16,24 +16,15 @@
     <!-- H E A D E R  /  N A V B A R -->
     <header class="bg-gray-100 border-b">
         <div class="flex flex-row max-w-screen-lg py-4 mx-auto justify-between items-center">
-            <a href="#">
-                <img class="p-4 my-1.5" src="Icons/logoMobile.svg" alt="zengrowth logo" />
-            </a>
+            <img class="cursor-pointer p-4 my-1.5" src="Icons/logoMobile.svg" alt="zengrowth logo" />
             <ul class="flex flex-row justify-around items-center">
-                <a>
-                    <li class="hidden mr-6 p-3 md:block">Services</li>
-                </a>
-                <a>
-                    <li class="hidden mr-6 p-3 md:block">About</li>
-                </a>
-                <a>
-                    <li class="hidden mr-6 p-3 md:block">Blog</li>
-                </a>
-                <a>
-                    <li class="hidden uppercase mr-6 w-36 py-4 text-center text-white rounded bg-blue-700 md:block">Get
-                        Started</li>
-                </a>
-                <img class="p-4 mr-5 hidden md:block" src="Icons/search.svg" alt='search'>
+                <li class="hidden mr-6 p-3 cursor-pointer md:block">Services</li>
+                <li class="hidden mr-6 p-3 cursor-pointer md:block">About</li>
+                <li class="hidden mr-6 p-3 cursor-pointer md:block">Blog</li>
+                <li
+                    class="hidden uppercase mr-6 w-36 py-4 cursor-pointer text-center text-white rounded bg-blue-700 md:block">
+                    Get Started</li>
+                <img class="p-4 cursor-pointer hidden md:block" src="Icons/search.svg" alt='search'>
                 <div class="menu-container">
                     <button id="drop-down" class="block md:hidden">
                         <img class="p-4" src="Icons/hamburger.svg" alt="hamburger menu" />
@@ -44,28 +35,28 @@
             </ul>
         </div>
     </header>
-    <aside class="block right-0 mobile-menu w-4/5">
+    <aside class="block right-0 mobile-menu w-3/5">
         <div class="">
             <div
                 class="flex mx-auto items-center justify-center bg-blue-900 ring-1 ring-blue-300 text-white text-right p-6 shadow-md rounded-md">
                 <nav class="w-full">
-                    <ul class="flex flex-col">
-                        <li class="text-2xl p-5 mb-2 border-b border-opacity-0 hover:border-opacity-80"><a
-                                href="#">Services</a></li>
-                        <li class="text-2xl p-5 mb-2"><a href="#">About</a></li>
-                        <li class="text-2xl p-5 mb-2"><a href="#">Blog</a></li>
-                        <li class="text-2xl py-4 mt-4 mb-12 mx-auto w-3/5 ring-2 text-center ring-white rounded"><a
-                                class="" href="#">Get Started</a></li>
+                    <ul class="flex flex-col items-end mobile-menu-list">
+                        <li class="text-2xl w-1/2 p-5 mb-2 mobile-li">Services</li>
+                        <li class="text-2xl w-1/2 p-5 mb-2 mobile-li">About</li>
+                        <li class="text-2xl w-1/2 p-5 mb-10 mobile-li">Blog</li>
+                        <li class="text-2xl mb-8 ring-2 text-center ring-white rounded"><button
+                                class="p-4 px-10">Get Started</button></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </aside>
     <!-- M A I N  C O N T E N T -->
-    <main class="w-full bg-gray-100 lg:bg-blue-900">
+    <main class="w-full bg-gray-100">
         <div class="flex flex-col-reverse max-w-screen-lg mx-auto lg:flex-row lg:py-10">
             <!-- I N F O  S E C T I O N -->
-            <section class="flex flex-col w-full items-center px-5 text-white bg-blue-900 lg:w-1/2 lg:items-start">
+            <section
+                class="flex flex-col w-full items-center px-5 text-white bg-blue-900 lg:w-1/2 lg:items-start lg:bg-transparent">
                 <div class="flex flex-col items-center mb-5 border-b border-blue-500 lg:items-start">
                     <h1 class="text-4xl font-bold mb-6 mt-10">Get in touch</h1>
                     <p class="mb-10 text-xl text-center lg:text-left">Want to see how Zengrowth can help you and your
@@ -104,55 +95,61 @@
             </section>
             <!-- F O R M  S E C T I O N -->
             <section class="md:mx-auto lg:w-1/2 lg:bg-white lg:rounded-md lg:mx-0 lg:px-10">
-                <div class="form-container-pending">
-                    <h1
-                        class="text-center text-3xl text-gray-600 mx-16 my-5 pt-0.5 pb-2.5 md:mx-0 md:my-8 md:p-0 lg:text-left lg:mx-0 lg:tracking-tight">
-                        Let us get to know you better.</h1>
-
-                    <form class="flex flex-col mx-4">
+                <div class="">
+                    <form class="flex flex-col mx-4 form-container-pending">
+                        <h1
+                            class="text-center text-3xl text-gray-600 mx-14 my-5 pt-0.5 pb-2.5 md:mx-0 md:my-8 md:p-0 lg:text-left lg:mx-0 lg:tracking-tight">
+                            Let us get to know you better.</h1>
                         <div class="flex flex-col lg:flex-row lg:justify-between">
-                            <div id='firstAlertHolder'>
+                            <div id='firstAlertHolder' class="mb-5">
                                 <input
-                                    class="mb-5 pl-4 py-1.5 leading-8 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 shadow lg:w-5/12"
-                                    type="text" name="firstName" id='firstName' placeholder="First Name">
-                                <h3 class="hidden" id="alertFirstNameInput">Insert a valid first name.</h3>
+                                    class="w-full pl-4 py-1.5 leading-8 rounded focus:outline-none focus:ring-1 focus:ring-blue-600 shadow "
+                                    type="text" name="firstName" id='firstName' placeholder="First Name*">
+                                <h3 class="text-red-500 mt-2 hidden" id="alertFirstNameInput">Insert a valid first name.
+                                </h3>
                             </div>
-                            <div id='lastAlertHolder'>
+                            <div id='lastAlertHolder' class="mb-5">
                                 <input
-                                    class="mb-5 pl-4 py-1.5 leading-8 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 shadow lg:w-5/12"
-                                    type="text" name="lastName" id='lastName' placeholder="Last Name">
-                                <h3 class="hidden" id="alertLastNameInput">Insert a valid first name.</h3>
+                                    class="w-full pl-4 py-1.5 leading-8 rounded focus:outline-none focus:ring-1 focus:ring-blue-600 shadow "
+                                    type="text" name="lastName" id='lastName' placeholder="Last Name*">
+                                <h3 class="text-red-500 mt-2 hidden" id="alertLastNameInput">Insert a valid last name.
+                                </h3>
                             </div>
                         </div>
-                        <input
-                            class="mb-5 pl-4 py-1.5 leading-8 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 shadow"
-                            type="text" name="email" id='email' placeholder="Email*">
-                        <h3 class="hidden" id="alertEmailInput">Insert a valid email address.</h3>
-                        <div class="flex flex-row mb-5">
-                            <select
-                                class="text-sm py-1.5 pl-8 mr-0.5 leading-8 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 shadow"
-                                id='prefixInput' name="prefix">
-                                <option value="+49"><img src="Icons/germany.svg" />(+49)</option>
-                                <option value="+39">(+39)</option>
-                                <option value="+44">(+44)</option>
-                                <option value="+30">(+30)</option>
-                                <option value="+41">(+41)</option>
-                                <option value="+355">(+355)</option>
-                                <option value="+383">(+383)</option>
-                                <option value="+31">(+31)</option>
-                            </select>
+                        <div class="mb-5">
                             <input
-                                class="w-full text-sm py-1.5 pl-5 leading-8 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 shadow"
-                                type="text" name="number" id='phoneNumberInput' placeholder="Phone Number">
-                            <h3 class="hidden" id="alertPhoneNumberInput">Insert a valid phone number.</h3>
+                                class="w-full pl-4 py-1.5 leading-8 rounded focus:outline-none focus:ring-1 focus:ring-blue-600 shadow"
+                                type="text" name="email" id='email' placeholder="Email*">
+                            <h3 class="text-red-500 mt-2 hidden" id="alertEmailInput">Insert a valid email address.</h3>
+                        </div>
+                        <div class="mb-5">
+                            <div class="flex flex-row">
+                                <select
+                                    class="text-sm py-1.5 pl-4 mr-0.5 leading-8 rounded focus:outline-none focus:ring-1 focus:ring-blue-600 shadow"
+                                    id='prefixInput' name="prefix">
+                                    <option id='preGermany' value="+49">(+49)</option>
+                                    <option value="+39">(+39)</option>
+                                    <option value="+44">(+44)</option>
+                                    <option value="+30">(+30)</option>
+                                    <option value="+41">(+41)</option>
+                                    <option value="+355">(+355)</option>
+                                    <option value="+383">(+383)</option>
+                                    <option value="+31">(+31)</option>
+                                </select>
+                                <input
+                                    class="w-full text-sm py-1.5 pl-5 leading-8 rounded focus:outline-none focus:ring-1 focus:ring-blue-600 shadow"
+                                    type="text" name="number" id='phoneNumberInput' placeholder="Phone Number*">
+                            </div>
+                            <h3 class="text-red-500 mt-2 hidden" id="alertPhoneNumberInput">Insert a valid phone
+                                number.</h3>
                         </div>
                         <label class="mb-1.5 font-bold text-gray-600 leading-8">Tell us a bit more about your
                             project:</label>
                         <textarea
-                            class="mb-4 px-4 py-2.5 pr-2.5 text-opacity-50 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 shadow"
-                            name="message" rows="4" cols="20"
+                            class="w-full mb-4 px-4 py-2.5 pr-2.5 text-opacity-50 rounded focus:outline-none focus:ring-1 focus:ring-blue-600 shadow"
+                            name="message" rows="4"
                             placeholder="What’s the biggest challenge your marketing team is now facing? Where would you like to be in 6 months from now with your marketing?"></textarea>
-                        <div class="mb-7">
+                        <div class="mb-5">
                             <label class="font-bold text-gray-600 leading-8">What areas of marketing are you interested
                                 in?<span class="font-bold text-red-500">*</span>:</label>
                             <div class="mt-1.5 md:flex md:flex-row">
@@ -179,36 +176,43 @@
                                         <input class="mr-5" type="checkbox" name="services" value="lead">
                                         <label>Lead Generation</label>
                                     </div>
-                                    <div class="flex flex-row items-center text-gray-600">
+                                    <div class="flex flex-row mb-5 items-center text-gray-600">
                                         <input class="mr-5" type="checkbox" name="services" value="development">
                                         <label>Design or development</label>
                                     </div>
                                 </div>
                             </div>
-                            <h3 class="hidden" id="alertCheckboxInput">Select at least one option.</h3>
+                            <h3 class="text-red-500 hidden" id="alertCheckboxInput">Select at least one option.
+                            </h3>
                         </div>
                         <label class="mb-1.5 font-bold text-sm text-gray-600 leading-8">What's your monthly budget look
                             like?<span class="font-bold text-red-500">*</span></label>
-                        <select
-                            class="mb-6 py-2.5 pl-2.5 pr-5 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 shadow"
-                            id="budgetSelectInput">
-                            <option class="text-gray-600" name="budget" value="" disabled selected hidden>Select Your
-                                Ammount</option>
-                            <option class="text-gray-600" name="budget" value="range1">Under 2,000</option>
-                            <option class="text-gray-600" name="budget" value="range2">2,000-5,000</option>
-                            <option class="text-gray-600" name="budget" value="range3">5,000-10,000</option>
-                            <option class="text-gray-600" name="budget" value="range4">Above 10,000</option>
-                        </select>
-                        <h3 class="hidden" id="alertBudgetSelectInput">Select at least one option.</h3>
-                        <p class="mb-7 bg-blue-700 text-white text-center text-sm font-bold py-4 rounded uppercase"
-                            id="submitButton">Start your project</p>
+                        <div class="mb-5">
+                            <select
+                                class="w-full py-2.5 pl-2.5 pr-5 rounded focus:outline-none focus:ring-1 focus:ring-blue-600 shadow"
+                                id="budgetSelectInput">
+                                <option class="text-gray-600" name="budget" value="" disabled selected hidden>Select
+                                    Your
+                                    Ammount</option>
+                                <option class="text-gray-600" name="budget" value="\<2000">Under 2,000</option>
+                                <option class="text-gray-600" name="budget" value="2000-5000">2,000-5,000</option>
+                                <option class="text-gray-600" name="budget" value="5000-10000">5,000-10,000</option>
+                                <option class="text-gray-600" name="budget" value="\>10000">Above 10,000</option>
+                            </select>
+                            <h3 class="text-red-500 mt-2 hidden" id="alertBudgetSelectInput">Select a budget option.
+                            </h3>
+                        </div>
+                        <button class="w-full mb-9 bg-blue-700 text-white text-center text-sm font-bold py-4 rounded uppercase"
+                            id="submitButton">Start your project</button>
                     </form>
-                </div>
-                <div class="flex flex-col card-pending">
-                    <img src="Icons/formSuccess.svg" class="mx-auto" />
-                    <h5 class="font-semibold my-4">Thank you for your interest.</h5>
-                    <p class="mb-10">We'll get in touch with you very soon!</p>
-                    <p><span class="font-semibold">P.S.</span>In the meantime, learn more about growth marketing strategies<span class="text-blue-500 underline">from our blog.</span></p>
+                    <div class="flex flex-col text-center w-4/5 mx-auto mt-12 mb-56 card-pending lg:mt-36">
+                        <img src="Icons/formSuccess.svg" class="mx-auto" />
+                        <h5 class="font-semibold text-2xl text-gray-600 my-2">Thank you for your interest.</h5>
+                        <p class="mb-10 text-gray-600">We'll get in touch with you very soon!</p>
+                        <p><span class="font-semibold text-gray-600">P.S. </span>In the meantime, learn more about
+                            growth marketing
+                            strategies <span class="text-blue-500 underline">from our blog.</span></p>
+                    </div>
                 </div>
             </section>
         </div>

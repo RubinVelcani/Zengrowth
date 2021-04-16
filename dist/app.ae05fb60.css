@@ -6,6 +6,11 @@
   z-index: -1;
 }
 
+
+.mobile-li {
+  border-bottom: 1px solid white;
+}
+
 .mobile-style {
   position: fixed;
   opacity: 1;
@@ -14,22 +19,90 @@
 }
 
 .card-pending {
+  display: none;
+  position:relative;
   opacity: 0;
+  animation: appear 0.3;
 }
 
-.form-container-pending {
-  opacity: 1;  
-}
+@keyframes appear {
+  0% {
+    opacity: 0;
+    display: none;
+  }
+  10% {
+    opacity: 0.1;
+    display: block;
+  }
 
-.form-container-sucess {
-  transition: all 0.2s ease-in-out;  
-  opacity: 0;
+  100% {
+    opacity: 1;
+    display: block;
+  }  
 }
 
 .card-success {
-  z-index: 10;
-  transition: all 0.2s ease-in-out;
+  display: block;
+  position:relative;
   opacity: 1;
+}
+
+.form-container-pending {
+  display: block;
+  opacity: 1;
+  animation: disappear 0.3;
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+    display: block;
+  }
+  10% {
+    opacity: 0.1;
+    display: block;
+  }
+
+  100% {
+    opacity: 0;
+    display: none;
+  }  
+}
+
+.form-container-sucess {
+  display: none;
+  opacity: 0;
+}
+
+input::placeholder {
+  color: #343FFF;
+}
+input::placeholder:nth-last-child {
+  color: #FF3434;
+}
+
+.error-border {
+  border: 1px solid #FF3434;
+  border-radius: 4x;
+}
+
+.correct-input-border {
+  border: 1px solid #343FFF;
+  border-radius: 4x;
+}
+
+#preGermany::before {
+  content: url('/germany.b0d7d058.svg');
+  position: absolute;
+}
+
+@media only screen and (min-width: 1024px) {
+  main {
+    background-image: url('/backgroundImage.86b64025.svg');
+  },
+  #firstName, #lastName {
+    width: 49.5%;
+  }
 }
 
 /*# sourceMappingURL=/app.ae05fb60.css.map */

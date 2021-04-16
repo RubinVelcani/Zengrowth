@@ -7162,7 +7162,7 @@ var liftUpButton = document.querySelector('#lift-up');
 var mobileMenu = document.querySelector('.mobile-menu');
 var formContainer = document.querySelector('.form-container');
 var submitButton = document.querySelector('#submitButton');
-var checkedServices = [];
+var validationCounter = 0;
 
 function dropDownMenu() {
   dropDownButton.addEventListener('click', function (e) {
@@ -7180,74 +7180,79 @@ function liftUpMenu() {
     dropDownButton.classList.toggle('hidden');
     liftUpButton.classList.toggle('hidden');
   });
-} // function grabCheckValues() {
-//   for (var checkbox of markedCheckbox) {
-//     if (checkbox.checked)
-//       checkedServices.push(checkbox.value);
-//     console.log(checkedServices);
-//   }
-// }
-
+}
 
 function validateFirst() {
-  var firstNameInput = document.querySelector('#firstName').value;
+  var firstNameInput = document.querySelector('#firstName');
   var alertFirstNameInput = document.querySelector("#alertFirstNameInput");
 
-  if (/^[a-zA-Z ]+$/.test(firstNameInput)) {
+  if (/^[a-zA-Z ]+$/.test(firstNameInput.value)) {
     alertFirstNameInput.classList.remove('block');
     alertFirstNameInput.classList.add('hidden');
+    firstNameInput.classList.add('correct-input-border');
+    validationCounter++;
     return true;
   }
 
   alertFirstNameInput.classList.remove('hidden');
   alertFirstNameInput.classList.add('block');
+  firstNameInput.classList.add('error-border');
   return false;
 }
 
 function validateLast() {
-  var lastNameInput = document.querySelector('#lastName').value;
+  var lastNameInput = document.querySelector('#lastName');
   var alertLastNameInput = document.querySelector("#alertLastNameInput");
 
-  if (/^[a-zA-Z ]+$/.test(lastNameInput)) {
+  if (/^[a-zA-Z ]+$/.test(lastNameInput.value)) {
     alertLastNameInput.classList.remove('block');
     alertLastNameInput.classList.add('hidden');
+    lastNameInput.classList.add('correct-input-border');
+    validationCounter++;
     return true;
+  } else {
+    alertLastNameInput.classList.remove('hidden');
+    alertLastNameInput.classList.add('block');
+    lastNameInput.classList.add('error-border');
+    return false;
   }
-
-  alertLastNameInput.classList.remove('hidden');
-  alertLastNameInput.classList.add('block');
-  return false;
 }
 
 function validateEmail() {
-  var emailInput = document.querySelector('#email').value;
+  var emailInput = document.querySelector('#email');
   var alertEmailInput = document.querySelector('#alertEmailInput');
 
-  if (/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(emailInput)) {
+  if (/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(emailInput.value)) {
     alertEmailInput.classList.remove('block');
     alertEmailInput.classList.add('hidden');
+    emailInput.classList.add('correct-input-border');
+    validationCounter++;
     return true;
+  } else {
+    alertEmailInput.classList.remove('hidden');
+    alertEmailInput.classList.add('block');
+    emailInput.classList.add('error-border');
+    return false;
   }
-
-  alertEmailInput.classList.remove('hidden');
-  alertEmailInput.classList.add('block');
-  return false;
 }
 
 function validatePhoneNumber() {
-  var prefixInput = document.querySelector('#prefixInput').value;
-  var phoneNumberInput = document.querySelector('#phoneNumberInput').value;
-  var fullNumber = prefixInput + phoneNumberInput;
+  var prefixInput = document.querySelector('#prefixInput');
+  var phoneNumberInput = document.querySelector('#phoneNumberInput');
+  var fullNumber = prefixInput.value + phoneNumberInput.value;
   var alertPhoneNumberInput = document.querySelector('#alertPhoneNumberInput');
 
   if (/^[+]*[0-9]{1,4}[0-9]{7}$/.test(fullNumber)) {
     alertPhoneNumberInput.classList.remove('block');
     alertPhoneNumberInput.classList.add('hidden');
+    phoneNumberInput.classList.add('correct-input-border');
+    validationCounter++;
     return true;
   }
 
   alertPhoneNumberInput.classList.remove('hidden');
   alertPhoneNumberInput.classList.add('block');
+  phoneNumberInput.classList.add('error-border');
   return false;
 }
 
@@ -7258,37 +7263,67 @@ function validateCheckboxes() {
   checkboxInput.forEach(function (box) {
     checkedCheckboxInput.push(box.value);
   });
-  !checkedCheckboxInput.length ? (alertCheckboxInput.classList.remove('hidden'), alertCheckboxInput.classList.add('block')) : (alertCheckboxInput.classList.remove('block'), alertCheckboxInput.classList.add('hidden'));
+
+  if (!checkedCheckboxInput.length) {
+    alertCheckboxInput.classList.remove('hidden');
+    alertCheckboxInput.classList.add('block');
+    return true;
+  } else {
+    alertCheckboxInput.classList.remove('block');
+    alertCheckboxInput.classList.add('hidden');
+    checkboxInput.classList.add('correct-input-border');
+    validationCounter++;
+    return false;
+  }
 }
 
 function validateBudgetSelect() {
   var budgetSelectInput = document.querySelector('#budgetSelectInput');
   var alertBudgetSelectInput = document.querySelector('#alertBudgetSelectInput');
-  !budgetSelectInput.value ? (alertBudgetSelectInput.classList.remove('hidden'), alertBudgetSelectInput.classList.add('block')) : (alertBudgetSelectInput.classList.remove('block'), alertBudgetSelectInput.classList.add('hidden'));
+
+  if (!budgetSelectInput.value) {
+    alertBudgetSelectInput.classList.remove('hidden');
+    alertBudgetSelectInput.classList.add('block');
+    budgetSelectInput.classList.add('error-border');
+    return true;
+  } else {
+    alertBudgetSelectInput.classList.remove('block');
+    alertBudgetSelectInput.classList.add('hidden');
+    budgetSelectInput.classList.add('correct-input-border');
+    validationCounter++;
+    return false;
+  }
+}
+
+function validateForm() {
+  validateFirst();
+  validateLast();
+  validateEmail();
+  validatePhoneNumber();
+  validateCheckboxes();
+  validateBudgetSelect();
 }
 
 function validateCheck() {
   var displayForm = document.querySelector('.form-container-pending');
   var displayCard = document.querySelector('.card-pending');
-  validateForm ? (displayForm.classList.add('form-container-sucess'), displayCard.classList.add('card-success')) : (displayForm.classList.add('form-container-pending'), displayCard.classList.add('card-pending'));
+  validateForm();
+  var validationCheck = false;
+  validationCounter < 6 ? validationCheck = false : validationCheck = true;
+  validationCounter = 0;
+  validationCheck ? (displayForm.classList.add('form-container-sucess'), displayCard.classList.add('card-success')) : (displayForm.classList.add('form-container-pending'), displayCard.classList.add('card-pending'));
 }
 
-function validateForm() {
+function toggleCheck() {
   submitButton.addEventListener('click', function (e) {
     e.preventDefault();
-    validateFirst();
-    validateLast();
-    validateEmail();
-    validatePhoneNumber();
-    validateCheckboxes();
-    validateBudgetSelect();
-    if (validateFirst && validateLast && validateEmail && validatePhoneNumber && validateCheckboxes && validateBudgetSelect) validateCheck();
+    validateCheck();
   });
 }
 
 dropDownMenu();
 liftUpMenu();
-validateForm();
+toggleCheck();
 },{"validator":"node_modules/validator/index.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -7317,7 +7352,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59379" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53566" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
