@@ -132,7 +132,6 @@ function validateCheckboxes() {
   } else {
     alertCheckboxInput.classList.remove('block');
     alertCheckboxInput.classList.add('hidden');
-    checkboxInput.classList.add('correct-input-border');
     validationCounter ++;
 
     return false;
