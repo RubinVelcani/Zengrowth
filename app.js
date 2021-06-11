@@ -1,5 +1,3 @@
-import validator from 'validator';
-
 const dropDownButton = document.querySelector('#drop-down');
 const liftUpButton = document.querySelector('#lift-up');
 const mobileMenu = document.querySelector('.mobile-menu');
